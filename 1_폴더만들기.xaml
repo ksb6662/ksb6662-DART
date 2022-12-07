@@ -1,0 +1,230 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_1_폴더만들기" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="STR_document" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1258,3691</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_1_폴더만들기_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="27">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="76">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_1_폴더만들기" sap:VirtualizedContainerService.HintSize="606,3626" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="STR_processname" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="544,773" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[{&quot;chrome&quot;, &quot;Excel&quot;}]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="processname" />
+          </ActivityAction.Argument>
+          <Sequence sap2010:Annotation.AnnotationText="kill process로 크롬창, 엑셀 창 닫기" DisplayName="본문" sap:VirtualizedContainerService.HintSize="400,639" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage sap2010:Annotation.AnnotationText="프로그램 실행 시작 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : 프로그램 실행 시작&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:KillProcess AppliesTo="{x:Null}" ContinueOnError="{x:Null}" Process="{x:Null}" DisplayName="Kill Process" sap:VirtualizedContainerService.HintSize="338,142" sap2010:WorkflowViewState.IdRef="KillProcess_2" ProcessName="[processname]" />
+            <ui:LogMessage sap2010:Annotation.AnnotationText="chrome, excel창 닫기 완료 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : chrome, excel창 닫기 완료&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <Sequence sap:VirtualizedContainerService.HintSize="544,2691" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:Boolean" Name="STR_folder" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[STR_document]" sap:VirtualizedContainerService.HintSize="482,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+      <ui:FolderExistsX DisplayName="Folder Exists" Exists="[STR_folder]" sap:VirtualizedContainerService.HintSize="482,142" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)]" />
+      <If Condition="[STR_folder = False]" sap:VirtualizedContainerService.HintSize="482,2276" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Then>
+          <Sequence sap2010:Annotation.AnnotationText="폴더가 없을 경우" sap:VirtualizedContainerService.HintSize="400,992" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage sap2010:Annotation.AnnotationText="DART 전자 공시 폴더 없음 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : DART전자공시 폴더 없음&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" sap2010:Annotation.AnnotationText=" 폴더 만들기" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="338,120" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CreateDirectory>
+            <ui:LogMessage sap2010:Annotation.AnnotationText="DART 전자공시 폴더 생성 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : 오늘날짜 폴더 생성&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="338,163" sap2010:WorkflowViewState.IdRef="CopyFile_1" Path="Data\Input\DART_전자공시.xlsx" />
+            <ui:LogMessage sap2010:Annotation.AnnotationText="엑셀 파일 복사 완료 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : 엑셀 파일 복사 완료&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </Sequence>
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:Annotation.AnnotationText="폴더가 있을 경우" sap:VirtualizedContainerService.HintSize="400,1121" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage sap2010:Annotation.AnnotationText="DART 전자공시 폴더 있음 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : 오늘 날짜 폴더 있음&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:DeleteFolderX DisplayName="Delete Folder" sap:VirtualizedContainerService.HintSize="338,89" sap2010:WorkflowViewState.IdRef="DeleteFolderX_1" Path="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)]" Recursive="True" />
+            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" sap2010:Annotation.AnnotationText="DART 전자공시 폴더 만들기" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="338,120" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CreateDirectory>
+            <ui:LogMessage sap2010:Annotation.AnnotationText="DART 전자공시 폴더 생성 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : 오늘 날짜 폴더 생성&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+            <ui:CopyFile ContinueOnError="{x:Null}" Destination="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="338,163" sap2010:WorkflowViewState.IdRef="CopyFile_2" Path="Data\input\DART_전자공시.xlsx" />
+            <ui:LogMessage sap2010:Annotation.AnnotationText="엑셀 파일 복사 완료 로그 메시지" DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="338,132" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[System.DateTime.Now.ToString(&quot;h시 mm분 ss초&quot;) + &quot; : 엑셀 파일 복사 완료&quot;]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:LogMessage>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+  </Sequence>
+</Activity>

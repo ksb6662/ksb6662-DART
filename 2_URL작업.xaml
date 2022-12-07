@@ -1,0 +1,564 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_2_URL작업" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1160,7332</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_2_URL작업_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="47">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="61">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="_2_URL작업" sap:VirtualizedContainerService.HintSize="942,10283" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap:VirtualizedContainerService.HintSize="880,10161" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="STR_reportnumber" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="InitAllSettings.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="818,122" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Data\Framework\InitAllSettings.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">
+            <Literal x:TypeArguments="x:String">Data\Config.xlsx</Literal>
+          </InArgument>
+          <InArgument x:TypeArguments="s:String[]" x:Key="in_ConfigSheets">
+            <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;Settings&quot;}" />
+          </InArgument>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">
+            <VisualBasicReference x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="config" />
+          </OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: 전자공시시스템" sap:VirtualizedContainerService.HintSize="818,9877" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="784,9651" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_reporturl" />
+                <Variable x:TypeArguments="x:Int32" Name="INT_count">
+                  <Variable.Default>
+                    <Literal x:TypeArguments="x:Int32" Value="1" />
+                  </Variable.Default>
+                </Variable>
+                <Variable x:TypeArguments="x:String" Name="STR_reporturl" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_" />
+                <Variable x:TypeArguments="sd:DataTable" Name="DT_name" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NClick ClickType="Single" DisplayName="Click '지분공시'" sap:VirtualizedContainerService.HintSize="722,166" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/main.do" DesignTimeRectangle="710, 592, 71, 22" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'지분공시'" FullSelectorArgument="&lt;webctrl parentid='li_04' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='li_04' tag='SPAN' type='' class='name' aaname='지분공시' check:innerText='지분공시' /&gt;" Guid="2b6005b2-ac2e-4f59-9cf5-2db47b95cf2a" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEsAAAAaCAYAAAD/nKG4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHASURBVFhH7ZZNroIwEIA5HNeRUxgXBk3kIoalbIh7g+EAsMVDGOdJO0/5mQ4diibvpV8yMZNAO/2cjgbgscbLEuBlCfCyBHhZAoLz+QyPxwNTD0ew3W4hz3NMPRxBURSw3+8xdaWBdBVCdGwwH3BJIFylz6cM3FKIwgSumI65QhKGEE5EcsHHZ6HPQK0RVFUFm80GUwPqEHRhKl4CPi1rmuvBQpbaJ4L0hnkPRlZd17BerzG1wbyYlSxKdi+8LM3CndUco8FeXG0dvidLzw1aiJfVR230vC4H6kgWsnpXjgoXWXa077V7cbdjEVntTNCHor6ZCVkz+T2cNOg6UMbB1OVLycKuSi56wXF30bLegmUxeZ1moMQrSSYpi8gaCHqJ06mGlmVEOKOcGc4qcn9nWShq2LYjYd+QhbV0OvAV5BxFRrUiao52a2Bk2fwpVdfIVEjv2+Jlva8AIpWFBzatr687tZ7+BacEKHrCGFllWUIcx5i68llZo/dHmA9qDyNrt9tBlmWYuiKUJWV2Z0lgZJ1OJ7jf75i6YiGrnS0TwXeG3oN6j51Z1jCy8HMheFl/g6/J+t94WQK8LAFeljUAP36bocJ1kMMaAAAAAElFTkSuQmCC" InformativeScreenshot="5e27c97ccc8ec51dc84a27dcaab7716e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click 'unchecked'" sap:VirtualizedContainerService.HintSize="722,166" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/main.do" DesignTimeRectangle="290, 757, 18, 18" DesignTimeScaleFactor="1.25" ElementType="CheckBox" FriendlyName="'Checkbox'" FullSelectorArgument="&lt;webctrl id='publicTypeDetail_D001' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='publicTypeDetail_D001' tag='INPUT' type='checkbox' class='publicTypeDetail_04' aaname='주식등의대량보유상황보고서' /&gt;" Guid="3a8c41cc-75f3-4075-ac09-07bc7a416284" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEOSURBVEhL1ZRNq0VQFEDvr5ZSJpIy8gOM+AemMjChMDBBZEIZGcrHQO3b3jm6uve9zu0dg7drdcixrAzOY9s2WNcVRK8kvoO34jzPIY5jLpIkgXEcfy/u+x5M0wRFUcAwDC40TQNZliHLMnK88kA7Yts2uK4L+77DNxMEAaiqCtM0kYdx/gr8ctM0x3b+wRBJkqCua/Iw31mMD9u2PbZ/N/huWZbkYZzFfxVXVUWe+4tvFS/LIlSMvvuK0S6iuCgK8jD+abEI8Y/Fuq5DFEXHVv4ZhoHEXdddi9mF7/u0AQ+VNE25wBA8ER3HuUiRU4yEYQiWZX08Ij+BUs/zLkLGRSwSEs/zTDci15uKF3gC2DwDIRXuLFsAAAAASUVORK5CYII=" InformativeScreenshot="1270930c393cfc4ea9c1ce431dd1fbc4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="315, 757, 211, 19" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl parentid='divPublicTypeDetail_04' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='divPublicTypeDetail_04' tag='LABEL' type='' class='' aaname='주식등의대량보유상황보고서' check:innerText='주식등의대량보유상황보고서' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAANcAAAAXCAYAAACYldoBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVISURBVHhe7VjbddswDO1O3qr2JnYySOzu0dpZIg9ngzj5YwmAkkjiQeqVnpzy4waWKIJ4Xyk/Pj4+3Ofnp2uyySaXlT/gR0NDw/JozNVkkyvJxlwNDSsBmauhoWF5sNfCy93GbTZ1OJwtWry4w2bnjs/S+ps7bjdu9+tN2Ofl+SCel2LvHpneMRLs27j9n9rnSV5PO7e5f8Trt1/+992lah+Tf/Zusz25a+3zEyXay2LnY3+6Vu23ZK3/j/faeY9uPzuP/1pe3cnXslRHFcx1xUaAIMrrGi4+cNRcfI10QsD5mgcW3hELT1yvACsqZj/YR0FJ7j8f3S7e1yHsR73C7wGkl+0HxD4VfETdVgzQzr27SGuIkDdRh7WWAc5RnpP9F2IvgHIPsdJ9mBuDGjsArAZy4Dl2LUs6iv/QQAPvD9gopxf9OS5nMpcP6hvbVydhUub7iZEPmAh6TmGuKJDJ/SApHhOYK2cquO4TzM+jwjKYDe2M/clkkRkrmRubS9Yzi7lR2syF+q06eDlhc01nPji/9AbmJZ6j1f9E5komR2FKMITikdlpReZS7czPtJhLm1LptI5/F5H7VPAxib2EUj6KMVT8z4F5lM8p+S9+YiTPr8tcZVTGwKyJAnNx0KG8+Ol+TUFBYHd3+8pCz4AJzZLCoDhrFFVaDEpgZzdXiJGE2K6a5pJ0JLAKi2IsnxFstAo3oGsQqXhSG1NbcJ9QJ+l9sKPQXL1+DXObS891j6nNdbvd+ovBmcHgeL2/7ot/5x6e+DrqCYk7Z0EmfUNzifrnXD89JA09rNOZ2+NruA7N9VvaPwQy1/963GbNdU7Wb7cz6Q3BVu1NBgg/r4vhq7Y/TO2zth6A9vbnDOgGm2qfB9rw88Fdo+Ji68x/Wu+aKNef1kM6iCBm4vnhGpDo83Zts+bKz7Ov4fxt0jTS82hHbJ8w/KV8V/xDYxzIkNRhPsVk5uqm5FjkUwP1ZFOZdMd2hebK9lYxV3x+4hdA0ZujhrksZgnNFcd5OQish+elfqGNzP8OQUccK0DyPMRK92HZGEh5gXt6rgmhVreaLbQu5RuZayngVPKTBqatvfbqHn4Si+TPLQU2sZldgWE8c8X7gLm2fpoBIyf3A4i5zuz3ANKbnJ0g6P7tm0uJFUBjnBTEXNL+6Qj2M7+GtS5vsv8ckHs516BP92HZGEj5hnt6rgFkA5wh7QdQLfP7t4i5wmSSHTBgTZZZUCafR5EVqjCDucL0tSf3wqic0mhTFq8aqN+/BmT/9bwlwLqxmYthFFPlEPJd0hde//o9eJ0/P5O59MmjAKZyHEgFqk5kD2va+f0VE9OGMolmM1eE4Mco3zWgrvFMJeUO7TZYM4Hqgz3x6wA5GOHTxBgQNOaR0bEmyxPWdmyDwVzwJ++4GLAO3yvaZKvZz++H91jhHxqAeCLK+4d35WnnA8Ik80FJ7hsMDtOJM1f6Qd+BGIT/w4cQpruf3lDgfH1Ab78yZUv+Q3PluUPbwhuHtZ98SD/4B1D8oPj42gBz0I7xHyDEoOT/sC4wV7IeY3hWXI8YDJrra5mrCPubq8gIOIX45OymTRnWO7SN2DbdzopvSmUKQ6xlm21ofkxnLn0i9yh8N6Iv1jnYeDyPc2NQXwcpptV4gblK+Orm6l9FxMKlprCbrwZrNleXYO3VifyvfjWbgenNVfKB4mfVxdTm+l74bs2FCAUIjZRhbEPIWLe5EOr3ytLx1DGnuRBzv7ms18IvGC7r41s219r4guZq+A9gNNf7+zv+aLLJJpeVVczV0NAwHo25mmxyFfnu/gLI4os81sl4uAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click '검색'" sap:VirtualizedContainerService.HintSize="722,166" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/main.do" DesignTimeRectangle="1229, 515, 125, 43" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'검색'" FullSelectorArgument="&lt;webctrl parentid='searchForm2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='searchForm2' tag='A' type='' class='btnSearch' aaname='검색' check:innerText='검색' /&gt;" Guid="26a20e66-2d3a-4901-a72c-28dd1c0b0d71" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAvCAYAAADEtqnOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAVkSURBVHhe7ZzrbxRlFMb9i/yiH0QULwkaI1GTJt4j0aiJQaNUTfSDVJGLQCG0tWqReKm2aqgKtSBbhBLQ0mqpBGq5lLSiXbe7O9vd7m32/njOu7PtLLw73W1plrbnJL9sdubMJDvnmfOec2YzN0Fs2ZuIQGxGBCPjEazd3o+bX3QJSxyOM8e7YNMi4B23rD+N2zaMY0WdR1iicHw5zhzvgk2LgBWyYoNbe6CwxKA4c7wLViwC3QHCkkREIIgIBBGBQIgIBBGBICIQCBGBcOOI4N7NE3i2xcAPf8RwyZNCxMwilcnBN5XBqZEENu8P4eGdPu2xwvyoughWvuvBEx/6sevQFPovJ+GezCgBpDNANgckUjkEIlkMj6ewrz+G176axKqNE9pzCXOj6iJY+4mBPcciKsjJdA4jnjSOD5v4/vcYvumNouvPOAbHkvCHs5gIZXDknIk32iZx/wde7fmuL2EMmNZF8cc1+8vgcBKFxzNjg7wtjjHre2Q0fK1/FaiqCFZvnUDL0QhGvWm6+3M4+08KzUfCeOmzAB7c4VVLxGNNftR1BHGQxMBZIprI4deLCbyw18Cq9yvJCLaAOpnXHuxyReDgJyJwZt0XAZz5O6lSPwvg+U8N3L1JH9ia3T7s7YmobJGjZaLxcBiP7KqkRihPBO6hgP4YEcHC0EFrPN/dF/5LoYGCygK4nWoEne+dGz0qQ/wyZKqC8cT5BF5tndT6VkYAnX7rhyMDV6t93xxEEDTxsn2fiMCZ8+4UwvGsWue5M9D52FlT78WWAyGYVCxeMdLY9GNI61cJNcepFrF+d9ITRU3R/jJF0GrCbblROYve/bZ9IgJnQrF8G/jdqZiqD3Q+drgG4FogRnUBs/vneV7EdgpI2vrR6TQ6hwtfNFZSBD40jmYtJ8tiSTQ2WPttIrjaRAREPJlDhq5f229R3FVGkXfHe/luggXA4mlyzf0i1nTR3Tsd8ywGuqm+GKxUBD7UnUlbmYQyQBdljpj6AphpuLoDqBEROMODIJ4DcDu4hroBnY8d7hZe+TKgxBOkLFJ/cErr54yB+uHM9BLAwbvYV6q2cFgOWqbg8s5kAPeQdY72KM4VhEBmUMsry4EDJy8kYFD/z0Oit74Nan3s8FCp9WRUdQi9lxKo/bqSwtDAlr4ExgpBZaO2pPeYUy1SSgQGOjzUolgW8cRQaz+uIS8Q498oaqUmcGb7T1NqRMyDoK7BuGoDuQvQ+T6006f8L0+kkSIR8DyB/XW+1xKCKzATNLaI10R9i87XjlNhOElCoEBfoUAXbb8KEYEzjzb61BAoGM2qVpHnAOs+D6j+/x5qF1dSDcCTwaea/djRNYW+kYSqBTh7rOfxcSXDIro7e0gIyWAKnYdm70TylNkdLHKqKgLmnX1BNQHk5wWc5nuGTfUcgcXwzMcG3qZlgsfHPFXkZwnsw9mDZwRcI+jOWQ1mZg3lm2QCCx4Q8V3NswLuFPhO52KRiz/uAviT0z9v5/08LczS59EhUxWJunPOikPFXtJmyQQignnAE8L7KOXzsIhTPheL44FMPvgUeO4gTtC25u6wepzcTlmBRcFLiOusidfb5jA1XAARlI/UBCXhgpAngvyomIPNY2SeA2yjYpC3cRH4wDYvntuT/88BF5M8NeQ6orIHSYRNBM6BWIiaQEQwbzjgT3/kx4GBGHr+ytcPpR46lUREUMSiE0GBJ6ljeLzJj9Vb5/C/AhFBEYtWBPNCaoIiRATlmohAuH6ICIQbEBGBICIQRAQCISIQRASCkwjkxVXLg1IvruJXmt365pD+IGFJwXHWvsJOXma5fOA4a19mKbZ8TUQgJiIQA/4H2Yo6C1TiXkQAAAAASUVORK5CYII=" InformativeScreenshot="4be6ac70c4d109d1e7f17977fc337a92.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DelayAfter="2" DelayBefore="2" DisplayName="Type Into '기간'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="722,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Text="[now.AddDays(-3).ToString(&quot;yyyyMMdd&quot;)]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsab007/main.do" DesignTimeRectangle="765, 438, 80, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'20221203'" FullSelectorArgument="&lt;webctrl id='startDate' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='startDate' tag='INPUT' type='text' class='' aaname='검색시작일' /&gt;" Guid="1f860872-cc2c-4862-8868-d039ef854c1f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFQAAAAiCAYAAADBEP4dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGvSURBVGhD7ZbbrYMwEERvkzQTSgkVUACijYgqSBO+XscvYG2QPZ9zJEvERJvZ4wXlzxAoFAomCp3nmQuwDkJJG7k7CgVAoWAoFAyFgqFQMBQKhkLBUCiYLqH7MpphGH7rtZrd7zs+k37vu5ox7A+jWb9+31KtZ3H335v/5KnUe5ZhMqeKXXQI3cy6pJa392DG8NkFTkHze9uSNSYNx0Yr9byY8XUVWqz3MIN6SB10TegBacYHk5BRhiDNKRMnEqfShGT1ItregVTvcYZitjZgQvMGZBqmj7v0FMRVmrkIEe6EZvWeZpDfOX6vD4zQ/FGzPGtG9k7vvMCpXqQq9FivnkGuf+/Qy6F10i1Ugp+bVJvJBYkYbWItWr1ISahS7zaDRyZUPbxGuoRKaO2E1fdXEFGaPkupXkQTWqhXzXBgN+tLP9wW2oUWA1rkXjYxaVoq4Wv1AhehN/XUDHZS8xqVA26hXagEif/lwkoNuEcp7McG0rsrX67Rm3qOi9BKPYue4bR//o1O2oUSFQoFQ6FgKBQMhYKhUDAUCoZCwVAoGAoFUxTK1b+iUIKBQqEY8w8sqZ9JtAAvmQAAAABJRU5ErkJggg==" InformativeScreenshot="c1db1ec515602981523c06080484dfbe.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="671, 443, 90, 20" ElementType="Text" FriendlyName="'기간'" FullSelectorArgument="&lt;webctrl aaname='기간' parentid='searchForm' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='기간' parentid='searchForm' tag='LABEL' type='' class='' check:innerText='기간' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEHSURBVGhD7dbbDYQgEIXh7Ym6pBViJ1iJsQwTe5iFcFFXHEGzmQfPn/iwXl4+RtYPIZEALxTghQK8UM/gR0NKKdLDEk/UNfXKPWdoir/fGAO/kO08UOHoI1kR/vw5M4Y7AN868bMl7QAzdNXEp4XQZOdwBvCN8Mugd5NbBR8XK78lLsA3wU9kPOAW7BL+OO2+AJ+Ody5ANXya9h0yC7/u9fkNiWHia+EjsOqs49x0Cp/ejiO6D/AV8GnSi1AF+Hz/Zk//DfAs/Dq1p0iXe3w5wHPwo/sa8Xs0M7ksPHMN8A1/rsVuwiPAi/V3eO4offG8pWfw6HaAFwrwQgFeKMALBXihAC8S0Re62kQtLPbvMQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click '조회건수'" sap:VirtualizedContainerService.HintSize="722,166" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsab007/main.do" DesignTimeRectangle="710, 763, 92, 24" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'100'" FullSelectorArgument="&lt;webctrl id='maxResultsCb' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='maxResultsCb' tag='SELECT' type='' class='' aaname='선택' /&gt;" Guid="fbcd91a3-5872-405f-9b65-64be6f091690" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAcCAYAAACeeLqCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGNSURBVGhD7ZrNjYMwEEa3BI7URgG+0AOUgdIHtAFdJAdaQJr1Bx5vIA4KP8axdp40EiHk8h4WiZwfEoIiAQJjAwzDQF3XUZZllKYpJUkic+LAKdzCMVwzNgDeEPH+B47hmrEBUAcX5HlOfd+bs8JZwCncwjFcMzYA3/0i3x9wy6uAsQHwBkbwy9KzBLgYCRCYkwK0VKmSmod5ybQVKaWmKRq6m9Okj5rCnNdTteb0P+RgABZZUlksAjwaKlWl00y0N0VlPSV4Pl5e963UdT3OJ2y59mAABiHmAe61jsKSAUSPqwCrZS4cQWJYBZ+I3SIfeAvwKtWItyH+eIn1xawJ3iofSIAduETvkQ+uDQDxbwLE9iB+Fr5XPvAWwPkMuMGy6xkw/2wssPi98oG3AK5vQXyX43j2LWixImLiiHzgL4AGq8D+DhjvfgargH8HxHn3n8VJAYS9SIDASIDASIDAvA0gGzL+Wd2QkS1Jv8Dp6pakbMpfM3Ds3JSXv6X4HTiFWzh2/i1FCIMECArRL6xwm8aVHFfTAAAAAElFTkSuQmCC" InformativeScreenshot="9667a9a538e0e992c3d8bfb59918a9d8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="640, 761, 66, 21" ElementType="Text" FriendlyName="'조회건수'" FullSelectorArgument="&lt;webctrl parentid='page' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='page' tag='LABEL' type='' class='' aaname='조회건수' check:innerText='조회건수' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAAZCAYAAACM9limAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFpSURBVFhH7ZXrrYMwDEa7E3M1q6BuEiZBjFGJHVweNiFNHDsUflD5SJZuIc39cuKkDzCymBgGE8NgYhhMDIOJYTAxDCaGwcQwnCxmgLZpoHkN+JnA508PIz7Rwc13PbGYvoVmDiJU2+P4hDoxwyuel8p1NEopBnPzueopdszYua+gGSSZiwxdx5CosECdGFXOSgpiMJRiQTIKMW8PLhmjEEPfW8qBf+PzH2HEjOCfFBL/VrZzqHZaFiGJwf8xjYmPQ1nMdhT3OafPZ3ROKoZ24CvMGoLZEZQSAlFIklMWQwtcvh91AFaUBeeaS5gv3pw6gpgtUGkyChWPWYPEz9ZzTyI5MWGR+YsT30vdegHFy1d726eXn6Jj6OgVF31zMfs7Yl/JrwvT+jypmHBMlHVQ6kliCG6HS2JQavadsmOqc8psYo7tBAYXynX+oBglV4q5lqMdo+Svxczv2RJ+du8r5n6YGAYTkwXgA+0XgMKoTSReAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NClick ClickType="Single" DisplayName="Click 'pane'" sap:VirtualizedContainerService.HintSize="722,166" sap2010:WorkflowViewState.IdRef="NClick_8" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="0, 0, 92, 70" DesignTimeScaleFactor="1" FriendlyName="'pane'" FullSelectorArgument="&lt;ctrl role='pane' /&gt;" FuzzySelectorArgument="&lt;ctrl role='pane' automationid='' /&gt;" Guid="c25c526f-1daf-4a68-879e-28756664b5c9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAABGCAYAAABBovOlAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKwSURBVHhe7Z09buMwEEZzkhxPhUr/lVaRC2xn+AY5gHWALdKqS5UygNMt4G67WY4kckmaNDw0PY2+B3xIJKp6HIwoMkBe1us1bbdb2u12yJPDrl/4F6ADFzaEK8KuIVwRCFemQPhAh6aj/me+ZH566pqGGpt9T+d5CIQIhJ+p37PQjrp9QvhxmC/ALQoqnMVHwocDNRB+F/WEu5YSjYGAOsJ9RvkH0+lBivrCDcMRVZ4DwpWpIvx86v+3EG4pWBZmqVPhwToc/fsWBcLBI0C4MhCuDIQrA+HKQLgyEK4MhCsjEn4+dfPHjUm0HTsc7YdPQ90J35k5BMIH6p1I/tps6DA7HyfCTUDiRAg4RBXuw5KnSk7trdgxEFMonCXbPROu6Gj/BCdAWWTC3cmOX9EQLuGBCrcvx7RwtJQ0hcIN7qQ+3cPtCxWE3C/cVK0vkZeBtoqvVynYE88hqPCpjaTX4eEYqjuPQDioAYQrA+HKQLgyEK4MhCsD4cpAuDIi4f4hQ/yBgwOI+xAKTx8s4ADifgTCrzepJtKbV6jyNELhXku5tVmF/fAsAuE+k/xb++EQnqZQuMHth+MAQkIF4ekeji3aNALhkj+TwAFEDlGF59fa4QsV1Z1HJBw8DoQrA+HKQLgyTvjrL0IUAuHKgXDlQLhyioR/meb/8Tu89/5neikwl+9w7OPvPGD4+gzHlhaRcCvuYn76wt+MYDLC7bU/ITwRbgLMvYsZe5+fW2KKKpzF+8Lja54AK5nl+4J5ApZc5VWEx1JfjdCx4rmizbNv3pg/GUsMhCvnacJHqRnhaCkPCk/1cCs11cP9Z5eWKsJZcLxKsZKvVilRxS8tVYTbe5a4ZfAEWJZc3Zwi4Uh5IFw5EK6cUfhms0kOIvUz/g+Itm1ptVqN9pHnhQu7bVv6B4jhB4NSqaNCAAAAAElFTkSuQmCC" InformativeScreenshot="85b8b829bf5407a5ac844e62d97d477c.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '조회건수'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="722,227" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Text="100" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsab007/main.do" DesignTimeRectangle="710, 812, 92, 24" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'100'" FullSelectorArgument="&lt;webctrl id='maxResultsCb' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='maxResultsCb' tag='SELECT' type='' class='' aaname='선택' /&gt;" Guid="ceda3ff9-5eb8-45cd-bbad-4b86938cc593" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAcCAYAAACeeLqCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE0SURBVGhD7ZdRroMgEEXfalmGLMN0C37jNlxGu4x5XGV8xdqXWtQp6T3JJEjw5x4mwI8QUyjAmFlA13WsE0vJBJBzoABjKMAYCjCGAoyhAGN2EDBI67z0t/SpDK0456ZqermmaYmjvknzsdohTX8pBQI0SC++WQi49eJdG9VMDBcnPkwK7sfLdZ9KCGGsV9iyFuzQARCRC7iGKEVDBgh67AJ0Sx44hNTQBa8EuzV8cIiAx1BT8LOIPx5kfTD/BfxO+IACNrIW9Lvhg/MEIPgnAmo7iO8DLwkfHCJg9Qy4IOW1MyD/txY0+JLwwSEC1m5Bussxzm5Bi46oidLwwTECIuiC+R0w7n4FXaDvgDp3/57sIICUQAHGUIAxFGAMBRhDAcZQgDFPBbDOK2UWQGygAFNEfgH1ZYNu1OW/0gAAAABJRU5ErkJggg==" InformativeScreenshot="a1bbd5f8f6d74778bf5d75e07d8c167d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="640, 810, 66, 21" ElementType="Text" FriendlyName="'조회건수'" FullSelectorArgument="&lt;webctrl parentid='page' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='page' tag='LABEL' type='' class='' aaname='조회건수' check:innerText='조회건수' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEYAAAAZCAYAAACM9limAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFpSURBVFhH7ZXrrYMwDEa7E3M1q6BuEiZBjFGJHVweNiFNHDsUflD5SJZuIc39cuKkDzCymBgGE8NgYhhMDIOJYTAxDCaGwcQwnCxmgLZpoHkN+JnA508PIz7Rwc13PbGYvoVmDiJU2+P4hDoxwyuel8p1NEopBnPzueopdszYua+gGSSZiwxdx5CosECdGFXOSgpiMJRiQTIKMW8PLhmjEEPfW8qBf+PzH2HEjOCfFBL/VrZzqHZaFiGJwf8xjYmPQ1nMdhT3OafPZ3ROKoZ24CvMGoLZEZQSAlFIklMWQwtcvh91AFaUBeeaS5gv3pw6gpgtUGkyChWPWYPEz9ZzTyI5MWGR+YsT30vdegHFy1d726eXn6Jj6OgVF31zMfs7Yl/JrwvT+jypmHBMlHVQ6kliCG6HS2JQavadsmOqc8psYo7tBAYXynX+oBglV4q5lqMdo+Svxczv2RJ+du8r5n6YGAYTkwXgA+0XgMKoTSReAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <uix:NClick ClickType="Single" DisplayName="Click '상세조건열기 ▼'" sap:VirtualizedContainerService.HintSize="722,166" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                <uix:NClick.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsab007/main.do" DesignTimeRectangle="1439, 557, 90, 25" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'상세조건열기 ▼'" FullSelectorArgument="&lt;webctrl id='btnPlus' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnPlus' tag='SPAN' type='' class='btnDetail fb11' aaname='상세조건열기 ▼' check:innerText='상세조건열기 ▼' /&gt;" Guid="be777c48-1b26-42dc-88ca-d520bde66dfc" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAdCAYAAAAjHtusAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI2SURBVGhD7ZZBbsMgEEV76J6jt+gBqki9QxY5QZRNV4lUVfLGShQrFAwfBhgbbLmki/nSUxt7TPFjIH1Rkqfk5fX9RwntQHzHc0XC9iAivjGIiG8MIuIbg4j4xiAivjHICvFXddH1l1O4tjs/lLrd1Y7Uxdd6dbwp1Z+v7mcfaibzUMdDeDYO7iVzOQ32tkuYI63jxnP3DnfV+7H/BmS5+HFy24in2EUov3Q8LhGazst9pqFz9lDZ/1m879Luml/Tibq5WrwR+FCXTj9Dxs2xosPzZfH2M+34mH2nb2CeM+LpO06Fa6gUZJH4cZI6fTeML8VLJrXmGtn+rPhEGDeWxR0RyZgmXmhyPU0mnl2sqY7njygfds45SLV4rHiYvO0i06G5LHdPx9ZzHe9q8NwobVB787sTEro/qfVMd3IMV+fGpDtsVrwG88pSfzwhK75cc2LxoTOP4w4xMktHjYaKp7iX5bcxI3Sm630datJjrSReg10fZfZ4jEFWiOe2XBBmdwY+u9pOL8Ja8YC9v6LjnXR2DhXi/U7xmZkzA7JQPETGKxzL5sg7HkfXfIiE0sIAdDOT4gJViQ/Hrgm/E6dBniaer5thkfhlXeipFO89ZN85ZZDNjxqercRPhDZCbR1HtXiN/jvlIy4H2eTLVagHEfGNQUR8YxAR3xhExDcGEfGNQUbx/e2h3j47tlDYDuMY8R3/cVjxv7WwCOMY8eK/vofxhnT+9hinxq1xjHjxkrYR8U+JUr/MlctYnRJ+IwAAAABJRU5ErkJggg==" InformativeScreenshot="b77accb6c97728af6428e2619408acb5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                </uix:NClick.Target>
+              </uix:NClick>
+              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '보고서명'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="722,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Text="일반[k(enter)]" Version="V3">
+                <uix:NTypeInto.Target>
+                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsab007/main.do" DesignTimeRectangle="1194, 611, 292, 30" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT reportName2'" FullSelectorArgument="&lt;webctrl id='reportName2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='reportName2' tag='INPUT' type='text' class='p10 ui-autocomplete-input' aaname='' /&gt;" Guid="c8f093d7-fbc2-4758-b091-2ca51fd1bb7d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASgAAAAiCAYAAADs60TLAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOVSURBVHhe7Z1LTuswFIbvEhiyMSYsgAl7oMuo2AIwAgozhggJCC8JiTmiCMRjgEBCBd/+Jk7zcEJym5Jw833SUYl9UjuDfjp2gvLHAAC0FAQFAK0lEtRoNDInJydmcXHRzM/Pm7m5OYIgiB8JOUfukYPkIkckKHUgJoIgmgw5SC5yRIKSvZSwvLxs7u/vw1YAgNkj58g9cpBc5IgE5aon5AQATSD3uCrKEQlKHQoAgKZIewhBAUBrQFAAUCvPz89mf3/fbG1tmbW1NfupY7VXBUEBQC18fHyYy8tLs7GxYcWUDrWr//PzMzzje6YS1MLCQvgXAHSdIAisiNbX183p6al5fHy00np4eLDHale/8spSi6Butnum7xsz6Jve9k14MCFYXTJLS/7w5VuGA9NbzQ4SrPbMYBgeCOVlvrdv3JmZfA+J+cXH9Mwhey2TsfLmDPC/oTtuTk53d3dhaxK1O0mVfTqgEUHlUpRfRVArAzP5lhszWIkLpFhQupa4lCSgaE7fCkdjjQWlPDcegoIOcHBwYMVzcXERtvg5Pz+3ecovQ22CmgggGe0QVNkKKpn7RWD67vs8c6CCAjDRhvjLy0vY4kf9ylN+GWoT1KwrqC8Jhj/+cd5ECHVWUP8mqMy1x+eHoKADuI1x7TkVoX7laalXhoYFFfvxi9z8cd5YLP1x9ZMep+49qKpLPK+gHFRQ0BFaX0ElhTCJOgQ1kYZElaxwvhNOmjL5iWVbXDA5gopfb+IcBAUdoeoe1NnZWdhSTC2CiiOZFEspTlJQvkrMyiklsfhxVUEBQP2UuYt3fX1t+7UcfH19DVuLaZWgMtjlWnpPKF5RFQjKnpuubkrKLG+pmVMReasoF1RQ0BGOjo4iSbnnoIQ+489B7e3t2fYyTC0o74/SE7YyUvXj6fNF7r5OCr+gskvBL9ReQlJF86wiHJZ40CG0Aa4lnhNROuJPmB8fH4dnFTO1oJpmVoKqUkHlgqCggzw9Pdn/vdvc3LQy2tnZseLSsm44HFaS1H8qKCEZpSugEnISVFAAM+P29jaS1OHhYdjq59cLCgB+H1dXV1ZQu7u75v39PWzNgqAAoBF05+/t7S088jOVoAAAZgmCAoDWgqAAoLUgKABoLbmC4rVTANAkco8c5H3tFC/uBICmkHMKX9zJq88Jgmg65CDvq89Ho5HtkL0QFUEQPxlyjtwjB8lFjkhQAABtA0EBQEsx5i/b4hB+/eC/bQAAAABJRU5ErkJggg==" InformativeScreenshot="0c5578608c6dd29673fbe18f16ca66e5.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                        <uix:Target DesignTimeRectangle="1100, 616, 90, 20" ElementType="Text" FriendlyName="'보고서명'" FullSelectorArgument="&lt;webctrl aaname='보고서명' parentid='searchForm' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='보고서명' parentid='searchForm' tag='LABEL' type='' class='' check:innerText='보고서명' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAYCAYAAABz00ofAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE0SURBVGhD7ZXtDYQgDEBvJ+Y6VyFuopMYxzBxhx6eReQbjVqNfUl/qBThtYEPMCSweCJYPBEsnoiHie9BCgGi7vG5lL1555ERP0LzVQsWUi3dBTfzbdQoF/yWimDezNhWakwFzYAvFkIC9Rr9qFr9h9eIT4FzHi1+Pd/QQIXyrXie+ETcWDx3vEVefF9P/xQgu+kpUHwW72y4iJx4I9qI02zreKtYXh4t5x81nfyP87ovkjcfM3p+t+AJ8UuOiQd3vANKnI+AQmLiQxJ0p05F8Y6Lib0CWXwU0+mrLt9SNA3muLFpzRdwE/Ej9K1UHR64S6z8tHj7UjboouaKfyVR8XoTxYEy9uaVkRKfurQxL3cfXci2jifnBR1/T956xjOHweKJYPFEsHgiWDwRLJ4IFk8CwA9CMlcGx8aZrwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NTypeInto.Target>
+              </uix:NTypeInto>
+              <ueab:ExcelProcessScopeX DisplayAlerts="{x:Null}" ExistingProcessAction="{x:Null}" FileConflictResolution="{x:Null}" LaunchMethod="{x:Null}" LaunchTimeout="{x:Null}" MacroSettings="{x:Null}" ProcessMode="{x:Null}" ShowExcelWindow="{x:Null}" DisplayName="Excel Process Scope" sap:VirtualizedContainerService.HintSize="722,7491" sap2010:WorkflowViewState.IdRef="ExcelProcessScopeX_3">
+                <ueab:ExcelProcessScopeX.Body>
+                  <ActivityAction x:TypeArguments="ui:IExcelProcess">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:IExcelProcess" Name="ExcelProcessScopeTag" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="688,7395" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DT_name]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='새 열 0' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="626,166" sap2010:WorkflowViewState.IdRef="NExtractData_5" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                        <uix:NExtractData.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="640, 484, 920, 2794" DesignTimeScaleFactor="1" FriendlyName="'1 코 모두투어'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='tbody' tag='TBODY' /&gt;" Guid="ec6bbcf4-eccf-443a-8286-72ae71827a57" InformativeScreenshot="397df5ed7711fdfa2c9dc1ff0317f7ce.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                        </uix:NExtractData.Target>
+                      </uix:NExtractData>
+                      <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DT_reporturl]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name=' Url' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='reportname' ReferenceName='Column1'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;true&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='href' name2='Column1' attr2='text'&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="626,166" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                        <uix:NExtractData.Target>
+                          <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsab007/main.do" DesignTimeRectangle="640, 802, 920, 2918" DesignTimeScaleFactor="1" FriendlyName="'1 코 윈하이텍'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='tbody' tag='TBODY' /&gt;" Guid="b49d5625-9ce9-47f4-9fc4-33d2edfd09d8" InformativeScreenshot="8f0ab2df7768727d3437c0caf0811916.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='전자공시시스템| 공시서류검색 | 통합검색' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                        </uix:NExtractData.Target>
+                      </uix:NExtractData>
+                      <ui:FilterDataTable sap2010:Annotation.AnnotationText="기재정정 있는 보고서 filter" DataTable="[DT_reporturl]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="626,201" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[DT_reporturl]" SelectColumnsMode="Keep">
+                        <ui:FilterDataTable.Filters>
+                          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                            <ui:FilterOperationArgument BooleanOperator="And" Operator="CONTAINS">
+                              <ui:FilterOperationArgument.Column>
+                                <InArgument x:TypeArguments="x:Int32">[1]</InArgument>
+                              </ui:FilterOperationArgument.Column>
+                              <ui:FilterOperationArgument.Operand>
+                                <InArgument x:TypeArguments="x:String">["[기재정정]"]</InArgument>
+                              </ui:FilterOperationArgument.Operand>
+                            </ui:FilterOperationArgument>
+                          </scg:List>
+                        </ui:FilterDataTable.Filters>
+                        <ui:FilterDataTable.SelectColumns>
+                          <scg:List x:TypeArguments="InArgument" Capacity="4">
+                            <x:Null />
+                          </scg:List>
+                        </ui:FilterDataTable.SelectColumns>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:FilterDataTable>
+                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[DT_reporturl]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="626,6620" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                        <ui:ForEachRow.Body>
+                          <ActivityAction x:TypeArguments="sd:DataRow">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="592,6496" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="STR_companyname" />
+                                <Variable x:TypeArguments="x:String" Name="STR_code" />
+                                <Variable x:TypeArguments="x:String" Name="STR_specificword">
+                                  <Variable.Default>
+                                    <Literal x:TypeArguments="x:String">[기재정정]</Literal>
+                                  </Variable.Default>
+                                </Variable>
+                                <Variable x:TypeArguments="x:String" Name="STR_" />
+                                <Variable x:TypeArguments="x:String" Name="STR_content" />
+                                <Variable x:TypeArguments="x:String" Name="STR_updatedate" />
+                                <Variable x:TypeArguments="x:String" Name="STR_reportname" />
+                                <Variable x:TypeArguments="x:Boolean" Name="BOOL_check" />
+                                <Variable x:TypeArguments="x:String" Name="STR_name" />
+                                <Variable x:TypeArguments="x:String" Name="STR_reporter" />
+                                <Variable x:TypeArguments="sd:DataTable" Name="DT_content" />
+                                <Variable x:TypeArguments="sd:DataTable" Name="DT_content_name" />
+                                <Variable x:TypeArguments="sd:DataTable" Name="DT_content_number" />
+                                <Variable x:TypeArguments="sd:DataTable" Name="DT_contract_details" />
+                                <Variable x:TypeArguments="x:String" Name="STR_stock_result1" />
+                                <Variable x:TypeArguments="x:String" Name="STR_stock_result2" />
+                                <Variable x:TypeArguments="x:String" Name="STR_stock_result3" />
+                                <Variable x:TypeArguments="x:String" Name="STR_stock_current" />
+                                <Variable x:TypeArguments="x:String" Name="STR_document" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:OutputDataTable DataTable="[DT_reporturl]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="530,89" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[STR_reporturl]" />
+                              <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="530,141" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[STR_reporturl]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[Split(STR_reporturl, vblf)(INT_count)]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="x:String">[STR_reporturl]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="x:String">[Split(STR_reporturl, ",")(0)]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="530,91" sap2010:WorkflowViewState.IdRef="NGoToUrl_5" Url="[STR_reporturl]" Version="V3" />
+                              <Sequence DisplayName="URL 속성 문자열 작업" sap:VirtualizedContainerService.HintSize="530,776" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NGetText DisplayName="Get Text '하이드로리튬'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_companyname]" Version="V3">
+                                  <uix:NGetText.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221206000422" DesignTimeRectangle="195, 84, 114, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'하이드로리튬'" FullSelectorArgument="&lt;webctrl aaname='하이드로리튬' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='SPAN' type='' class='' /&gt;" Guid="8c28721e-4a65-4d40-a051-56507c5e148d" InformativeScreenshot="0bc0f6bc5e2ae783edb039010a2c3c9a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2022120600042220' title='하이드로리튬/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                                  </uix:NGetText.Target>
+                                </uix:NGetText>
+                                <uix:NGetText DisplayName="Get Text '본문'" sap:VirtualizedContainerService.HintSize="338,166" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_content]" Version="V3">
+                                  <uix:NGetText.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221206000422" DesignTimeRectangle="59, 195, 384, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FriendlyName="'2022.12.06  주식등의대량보유상황보…'" FullSelectorArgument="&lt;webctrl id='family' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='family' tag='SELECT' type='' class='w01' aaname='본문' /&gt;" Guid="f2cbd194-ab27-4df8-81a4-94ab0b8ec804" InformativeScreenshot="66ed0c4530b174c8c41f1a6e8f409d79.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='하이드로리튬/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                          <uix:Target DesignTimeRectangle="28, 197, 23, 16" ElementType="Text" FriendlyName="'본문'" FullSelectorArgument="&lt;webctrl aaname='본문' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='본문' tag='LABEL' type='' class='' check:innerText='본문' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAAAUCAYAAAB8gkaAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVEhL7ZIxDoMwDEW5Uy4FQ6/BEqmnYOcMDMzslbgA3bojYyokXOcHEUhhyfCWH4fn2GTvz0hXkWRRuFfWWEOmqOn1kw9UFZzbTmRMX1NuOIc8qOpFLRNFVrYim2mfATKny4W/yC4dI7zMaFkgjmzF8xp5hhrSiCmtsu+cQTHA2dGMb3+CjZftQAqOyPAP4uE2GTpXYBl/AKKbWGSwltFNnNtZIEkWgZEmf3BUcXHPo5EAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NGetText.Target>
+                                </uix:NGetText>
+                                <Assign sap2010:Annotation.AnnotationText="업데이트 날짜 변수지정" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[STR_updatedate]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[Split(STR_content," ")(0)]</InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                                <Assign sap2010:Annotation.AnnotationText="보고서명 변수지정" sap:VirtualizedContainerService.HintSize="338,101" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[STR_reportname]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[Split(STR_content," ")(1)]</InArgument>
+                                  </Assign.Value>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Assign>
+                              </Sequence>
+                              <uix:NGetText DisplayName="Get Text '보고자'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_reporter]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/report/viewer.do?rcpNo=20221207000040&amp;dcmNo=8898749&amp;eleId=1&amp;offset=798&amp;length=5243&amp;dtd=dart3.xsd" DesignTimeRectangle="703, 457, 156, 29" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'우종웅'" FullSelectorArgument="&lt;webctrl id='ifrm' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableCol='3' tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ifrm' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' class='' tag='TD' /&gt;" Guid="d402f4b1-11df-4662-a945-b2656f4d588d" InformativeScreenshot="e1c7e43c3db4deef4c6198bfd35e4540.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2022120700004064' title='모두투어/주식등의대량보유상황보고서(일반)/2022.12.07' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target DesignTimeRectangle="558, 457, 145, 29" ElementType="Text" FriendlyName="'보고자'" FullSelectorArgument="&lt;webctrl id='ifrm' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ifrm' tag='IFRAME' /&gt;&lt;webctrl tag='TABLE' /&gt;&lt;webctrl isleaf='1' type='' tag='TD' class='' aaname='보고자 : ' check:innerText='보고자 :' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJUAAAAhCAYAAADQ+eksAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEUSURBVHhe7dPbCsMgFETR/P9Pp/ggSFDPbWgM7AVCU49pyEyvGxCjVJCjVJCjVJCjVJCjVJCjVJCjVJCjVJCjVJCjVJD7dKmui//EicxUPMGtZtr31lqZzfbVjZ9xDjMVT3CVcCv3p1RnMlNpwXlWlufsaibyu5VnRIz5piuhe1TuH/ndyjMixnzTldA9rLNtfzXT96x74L/MNDyBeUOdzVln+37mLN7hSqWFt1tes1nrfN/PnMU7Uqlkw4wW47lnXeMMqVSyYUZLYc1HniMyi5rUm84GpCjB+L3iftDbvukWRGSNZvu7NXpej8a93Rze8+lUKNWZSAVylApylApylApylApylApylApylApylApi9/0D4fUk+oaTkQUAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NClick ClickType="Single" DisplayName="Click '하이드로리튬'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221206000422" DesignTimeRectangle="195, 129, 114, 26" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'하이드로리튬'" FullSelectorArgument="[&quot;&lt;webctrl aaname='&quot;+STR_companyname+&quot;' tag='SPAN' /&gt;&quot;]" FuzzySelectorArgument="[&quot;&lt;webctrl aaname='&quot;+STR_companyname+&quot;' tag='SPAN' type='' class='' check:innerText='&quot;+STR_companyname+&quot;' /&gt;&quot;]" Guid="681eb582-5c16-4cba-9945-7eb308919fd9" ImageBase64="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" InformativeScreenshot="f9dea5f1ea434a97af60a1a329147783.png" ScopeSelectorArgument="[&quot;&lt;html app='chrome.exe' htmlwindowname='&quot;+STR_reportnumber+&quot;' title='&quot;+STR_companyname+&quot;/&quot;+STR_reportname+&quot;/&quot;+STR_updatedate+&quot;' /&gt;&quot;]" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NGetText DisplayName="Get Text '종목코드'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_code]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221206000410" DesignTimeRectangle="801, 316, 446, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'016790'" FullSelectorArgument="&lt;webctrl parentid='winCorpInfo' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='winCorpInfo' tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="84f353fa-4d26-4dd0-81fa-51a555171849" InformativeScreenshot="e437a212e326f49a4299ed98d0735d44.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='202212060004101' title='카나리아바이오/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="699, 323, 52, 14" ElementType="Text" FriendlyName="'종목코드'" FullSelectorArgument="&lt;webctrl parentid='winCorpInfo' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='winCorpInfo' tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='종목코드' check:innerText='종목코드' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADgAAAASCAYAAAAOsR1OAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC3SURBVFhH7ZTdDcAgCIS7k1s6WfdxAJqmMTEgSK/2R9OH70W5w0PjklKimfkDjg4LuFIMgYJJpHUYjXmDpaEUyrpajbWnoWkQLzVgadYytvaRQ2kaxMt8oqWRts73ND4TkIOYejTIUC4H9DTN5CaIhsMPrgXx9JI9Gjf4BN6AGJWA1qRqTbHJSv1e0zfcjvLJWEHONPdo+ocqeSFgXvOQdYjmoMMTtUCG0pcPfDL38gccnckDJtoA8Sx31D3t/r0AAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NClick ClickType="Single" DisplayName="Click '닫기'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221207000102" DesignTimeRectangle="1227, 215, 20, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'닫기'" FullSelectorArgument="&lt;webctrl parentid='winCorpInfo' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='winCorpInfo' tag='A' type='' class='btnClose' aaname='닫기' check:innerText='닫기' /&gt;" Guid="9fb09cb5-7d35-4aab-9e70-e3c45bf36fff" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIFSURBVEhLtZbbSiNBFEX7E/Ki5Ff8CV/0QYI4ireA42VGlPGGn+FdR53RGf2YvAuiiCAOJvFuokkfa1VSnaJTnXRGLNikqHP22tBdXRWv8OpLJpORVColyWRSEonEhwQDFkzYHpO29o+Dw4IJ2yONhc6etGROrqRv5UY6lq/+S3hhwIIJ2zOP5fTiWhi3T2X5stp6CB68DFgwYXtM0NJxXsqVutw9l6W/hZCBtRu5Vx4GjMWjvGaiIIDGBVUoVUMeXsraGIaFRQ+9DLwwWHcGoPm/eXkr6X5l9GVwPTpkaAO4r3vx4DW1yAA0pxpfSxUjgOHN+pARtWbg9P74U4OjhgFo9jAXhDwWfBndygY15qwx6KHX9qKmAWjmoBbypIBpBU5vZ/WcQY0elzdWAJr+rULeKsDnoq/FYO37LzccxQ5A3/ZzUqyGMJiz5uo1ailgYjcrL+pcMYP5uFpz9RrFDpjcywVwfu05NZcHxQqYUo+BE9EAv/7MapkQavS4vE0DeIH2yx3bqT0S5iaE9+F62Q0D9M6pbk/gbE27jlgLdpTqxWPXIwNmHXvfNtqiFvVNOAP43A2cY8D+eqMU/qrNkVEXMBeCc5CFYVHirLLPJVhBgLlwzi//6QYaG52gUcJjQmDB1BeOuTK7etNycnYd6w6IEl4Y3YoFU1+Zn37pf+7fFl/eAXF6rmmvTxW+AAAAAElFTkSuQmCC" InformativeScreenshot="dc39f0f48fbc741ec8be67b9e30940d3.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='202212070001021' title='윈하이텍/주식등의대량보유상황보고서(일반)/2022.12.07' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NClick ClickType="Single" DisplayName="Click '2. 보유주식등에 관한 계약'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221206000410" DesignTimeRectangle="56, 446, 149, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'2. 보유주식등에 관한 계약'" FullSelectorArgument="&lt;webctrl parentid='16' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='16' tag='A' type='' class='jstree-anchor' aaname='2. 보유주식등에 관한 계약' check:innerText='2. 보유주식등에 관한 계약' /&gt;" Guid="7ded432a-d6a2-4e7f-99bf-a23e08dd7acd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAJkAAAAcCAYAAAByIR3RAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALgSURBVHhe7ZZtbsMgDEB3j2l/erPmMO1Zoh6lUq9RqZdgmAAxxiaQxpu0+UlobUPAHy9kH84wlDHJDHVMMkMdk8xQxyQz1DHJDHVMMkMdk8xQ53jJnrObro/4BfNwl/PsXvFbib92OrkTHuwafuaVzCPjco8TC15uPl/8LiWv21TPh/iZdcPg4r9f8vXpFq+mGsBfMWcA4iJ7wIi5Q65yPpObn/FrgPuthtZviXm993Gla5DeoL5A/XLODQrJ+AAGGZYMkqiLAwlIomWgwc0mJgYl29o3A7GndVEe3ZIxoP2pZPIDBjH0SVZwn+N8STL4vYwBi7VDMtIISNYnwD9JDeJ9bDGkk0CSMjeQI173928nKov8lmRk71z0tAb87ZLMx5fmof3lk4xjXLJSWk4yFFcC5QT54nslGq/LxeIeUwvEJjEBB2QBxJMM9kAChrmNZkIxJ98AOkeULBeejlL66n706gyxo4a0QbVBDx0rGY0v12hUMqh7yme9V/kko0AQO0+yIcmAZa9cuKJ4iNREbp1c/FqEtBb+DFSSDFLdn062VIM9kiHWkyblhMVYCA9QaPQihFgfQimIJBmA1oVB6rf83pZblCwkyDV6C/qk4dFV8OPgcsCilZIwoksjrcm8LsN6XZKR5pEB69Yn2ZZk7WZnQo/8OkWvJMlkSlFlgmRfX5/hSyI05wghmkUebeoOCdTBTUefuyTbppbMU4iBc+2VDOKk81on2ftUJ9lhggG9Rabz9t7H0pazaiKA/7fKozxBMmhuXgvi6pYMGsyvzUom0iFZiJXbqyUZXKO1WEf3SZYIgjVOgbaAb5w0qpLJlK/LCDSCW3NkL5h7gGQ8HTIN05JMZuh1uSBIgop06CmHoc3obehI4xlMssSPSfaL0Gb0NnSk8QysZMDI65JjWDK61zrqJo7O7+E/SGb8aUwyQx2TzFDHJDPUMckMdUwyQx2TzFDHJDPUMckMZZz7BrgqR0NwbctsAAAAAElFTkSuQmCC" InformativeScreenshot="a4a839642ceca03c401a0b91620c87af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='202212060004101' title='카나리아바이오/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DT_content_number]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='새 열 0' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NExtractData_7" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NExtractData.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="259, 423, 1386, 302" DesignTimeScaleFactor="1" FriendlyName="'연번 성명(명칭)'" FullSelectorArgument="&lt;webctrl id='ifrm' tag='IFRAME' /&gt;&lt;webctrl aaname='연번 성명(명칭) 보고자와의관계 생년월일 또는사업자등록번호 등 주식등의종류 주식등의수 계약 상대방 계약의종류 계약체*' tag='TABLE' /&gt;" Guid="7686d24f-0ea0-4d26-9886-07796e8e1e52" InformativeScreenshot="ca63ae3072ecc8c00eb6a6ab04a0f4c8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2022120600042276' title='하이드로리튬/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                </uix:NExtractData.Target>
+                              </uix:NExtractData>
+                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[DT_contract_details]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='연번' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='성명(명칭)' ReferenceName='Column1'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='보고자와의 관계' ReferenceName='Column2'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='생년월일 또는 사업자등록번호 등' ReferenceName='Column3'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='주식등의 종류' ReferenceName='Column4'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='주식등의 수' ReferenceName='Column5'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='계약 상대방' ReferenceName='Column6'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='계약의 종류' ReferenceName='Column7'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='계약체결(변경)일' ReferenceName='Column8'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='계약 기간' ReferenceName='Column9'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='비율' ReferenceName='Column10'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='비고' ReferenceName='Column11'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='3' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column3' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='4' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column4' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='5' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column5' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='6' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column6' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='7' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column7' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='8' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column8' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='9' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column9' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='10' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column10' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='11' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column11' attr='text'&gt;&lt;webctrl tag='tbody' idx='1' /&gt;&lt;webctrl tag='tr' /&gt;&lt;webctrl tag='td' idx='12' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NExtractData_8" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NExtractData.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="259, 468, 1386, 307" DesignTimeScaleFactor="1" FriendlyName="'연번 성명(명칭)'" FullSelectorArgument="&lt;webctrl id='ifrm' tag='IFRAME' /&gt;&lt;webctrl aaname='연번 성명(명칭) 보고자와의관계 생년월일 또는사업자등록번호 등 주식등의종류 주식등의수 계약 상대방 계약의종류 계약체*' tag='TABLE' /&gt;" Guid="ca66cb4d-29ae-41c2-b1de-33ef233caf72" InformativeScreenshot="f65ad3072cbc70db475189be97d92c37.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='202212060004222' title='하이드로리튬/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                                </uix:NExtractData.Target>
+                              </uix:NExtractData>
+                              <uix:NClick ClickType="Single" DisplayName="Click '닫기'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NClick_18" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20221206000418" DesignTimeRectangle="1854, 131, 54, 20" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'닫기'" FullSelectorArgument="&lt;webctrl class='btnSearch' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl class='btnSearch' tag='BUTTON' type='' aaname='닫기' check:innerText='닫기' /&gt;" Guid="31605e23-02a9-42c9-bf04-eaf899be091b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAYCAYAAACr3+4VAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFISURBVFhH7ZhBioMwFIbnkjmCeIOKp3BTZ3qI4iWk4qK7QQQ9wqCL2ZfX/sXamDyTMnQgTSp8G9+fB19eKtWPn98ThUB4ovXxmz6/dpRlmRfABU6aKApt29I4jl4AFzhpotgFbsErA6e3KKjrmtI0JSGEEWSQlZu7hFU0iiLq+55sFzLIys1Vun2ib9KmoA71Q05iWy3X4N5afuyo2ORUyXkDVlE0f/RCVm6uAtFk37E1VlSjonzO/JPovKMr3DJycxWr6NQrPzD1KXNf7+1EVTHHJ6quEyKhor/UbaKLaQKHJ2rEJIra/BC64fBE/8L1FGiSwPWJYjrT5mgoE622+r07ryBqfOg8ypNF4zimYRgmlfULGWTl5iyuipZlef3HszhiDMggKzdnMR1d9re4xpNFfSFsUd9evJum4V+8g/mU4juBiJ7oDPjWQ10dyYglAAAAAElFTkSuQmCC" InformativeScreenshot="8e7a142ec8f164eded253c2f275c0a99.png" ScopeSelectorArgument="&lt;html app='chrome.exe' htmlwindowname='2022120600041839' title='하이드로리튬/주식등의대량보유상황보고서(일반)/2022.12.06' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="530,91" sap2010:WorkflowViewState.IdRef="NGoToUrl_6" Url="[config(&quot;GOOGLE page&quot;).ToString]" Version="V3" />
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="530,227" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Text="[STR_code + &quot;[k(enter)]&quot;]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.google.com/" DesignTimeRectangle="700, 533, 443, 37" DesignTimeScaleFactor="1.100000023841858" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='gLFyf' aaname='검색' /&gt;" Guid="c51dfb71-1ca8-4b55-b82c-1cca6f14c3cb" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAb8AAAApCAYAAAClWyeYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVHhe7dUBAQAACMMg+5e+QQYluAFAjPwAyJEfADnyAyBHfgDkyA+AHPkBkCM/AHLkB0CO/ADIkR8AOfIDIEd+AOTID4Ac+QGQIz8AcuQHQI78AMiRHwA58gMgR34A5MgPgBz5AZAjPwBy5AdAjvwAyJEfADnyAyBHfgDkyA+AHPkBkCM/AHLkB0CO/ADIkR8AOfIDIEd+AOTID4Ac+QGQIz8AcuQHQMz2IuxOWLAztBgAAAAASUVORK5CYII=" InformativeScreenshot="f3fcd1f83efd8ea25bf6e478f9c972ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                </uix:NTypeInto.Target>
+                              </uix:NTypeInto>
+                              <uix:NClick ClickType="Single" DisplayName="Click '1개월'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=192390&amp;oq=192390&amp;aqs=chrome..69i57j0i546l5.543j0j15&amp;sourceid=chrome&amp;ie=UTF-8" DesignTimeRectangle="391, 510, 39, 24" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FriendlyName="'1개월'" FullSelectorArgument="&lt;webctrl aaname='1개월' parentid='knowledge-finance-wholepage__entity-summary' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='1개월' parentid='knowledge-finance-wholepage__entity-summary' tag='DIV' type='' class='' check:innerText='1개월' /&gt;" Guid="15c581ef-d48b-49d0-a543-a93a2c50043d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAcCAYAAAD4IkbVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEdSURBVFhH7ZTRDYMgEIadw/ncwCl8dAUHcABn8K1LSNKYmMakT732UApF9LgWEk39EhIUOD5/xQQOxCkbi1M2Fv8r21YdlBfsjVAXqs9HNALSapivNGxZFErzz5Y143uMlp3G7Bpp0YOYZ7BlcWMlsYUW9JNdq2veZ8niQjOxdVBKQD1H4iMbMNkBSrlYQPYqSMqKHrL8Cu186SdL4yWrJ02bUbJ2UUpWvbGthmtYn4GfLL4F/QkgtgyVLM537RFcVopZBalkbUxZKWg8aDBZWdg4EAquLBe27JSAPlQmvrKLFF3t12TXElWESlbuE/aALdlVshQsWYcMxYrsdwRN1votIkFlY3PKxuKUjcVhZG/3ByTu38Y+24FkO3gCl456PoQcTwcAAAAASUVORK5CYII=" InformativeScreenshot="8af7c7de4f64fdab73b7567c04525b0b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='192390 - Google 검색' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive" />
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <uix:NGetText DisplayName="Get Text '3,765.00'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NGetText_15" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_stock_current]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=192390&amp;oq=192390&amp;aqs=chrome..69i57j0i546l5.543j0j15&amp;sourceid=chrome&amp;ie=UTF-8" DesignTimeRectangle="261, 383, 159, 44" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FriendlyName="'3,765.00'" FullSelectorArgument="&lt;webctrl aaname='3,765.00' parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' type='' class='IsqQVc NprOob wT3VGc' /&gt;" Guid="756f69c1-cb50-49d0-ba8d-b11f4cda4d2f" InformativeScreenshot="e40545f752c2bff2ce26da5717e93fd1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='192390 - Google 검색' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Text '국동'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NGetText_12" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_stock_result1]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=005320&amp;sxsrf=ALiCzsZQ5d3YObQTIbIGOxDzBnKLesRwsg%3A1670393312746&amp;source=hp&amp;ei=4C2QY_amK_Dk2roPhp-zuAc&amp;iflsig=AJiK0e8AAAAAY5A78HMTLUg7Lz6_ulkkc5fRw522Wueg&amp;ved=0ahUKEwj2lqiA7Ob7AhVwslYBHYbPDHcQ4dUDCAo&amp;uact=5&amp;oq=005320&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECdQXlhtYHFoAXAAeACAAQCIAQCSAQCYAQCgAQGwAQo&amp;sclient=gws-wiz" DesignTimeRectangle="261, 481, 69, 20" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FriendlyName="'+305.00'" FullSelectorArgument="&lt;webctrl aaname='+305.00 ' parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' type='' class='' /&gt;" Guid="98906816-fc6f-494a-b590-b75f6ac1a3b0" InformativeScreenshot="e11707897debe7aed6eec9d8eb36e488.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='005320 - Google 검색' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target DesignTimeRectangle="343, 277, 62, 35" ElementType="Text" FriendlyName="'국동'" FullSelectorArgument="&lt;webctrl aria-role='heading' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='heading' tag='SPAN' type='' class='yKMVIe' aaname='국동' check:innerText='국동' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAnCAYAAAC7bZ4BAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHQSURBVGhD7Zg9a8JQFIb7UyoUHIQObg7d3IQMQpeCg+DUDlKXLlK6SH5Bh5YOiotE6ODSrW5dRCcdig7iImQoZCg4CG+teZNBlCTexC/OA2e5kHNzHu+598YzCEtEBBERREQQHyJ6qMQucK4cBTSmTOmXqYH82lxBQ0eXKTchIsgOWsMRqSLCuxBVRAQREUREkOhFmC0W84TPGcf8clIiVIoREcR9Vj0qHebcQPQiRnVk/l/m6hl9DvlmnyLMZmFtoigi3zQ565Z0dOZSbx0RQdRbw3mZvAHFsoJzqiK6ur1SdhGre4aIIMfdGiEiIshRibBGX2i86CjmNGRSCXeZ25FEWtNwU9JRaw0wCXid9xQR3nG6/c5u9eooZlYL94oksmUDw18m8eDgRUwW88eZI54qoNJsoz+2YK0WOJ/B+jEx7LRQK+dw6cybXszrQ4Z6a3ih8q0xriO7fDaBfHUAa85xP0zbeExTYLkNr045aBHDqmb/qnctWBwLxPeb/Z0Tu8eHR4KDFuHeK/QeR4Li/08hWRFE9ghy2CIWTN5v3RPA76nxWro+sVODWAMDD/u+RygTggiHvd4slQlRRJREL+JIEBFERBARQUQEERFLgD/68wf3+N8cjAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                        <uix:Target DesignTimeRectangle="261, 429, 159, 44" ElementType="Text" FriendlyName="'1,350.00'" FullSelectorArgument="&lt;webctrl aaname='1,350.00' parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='1,350.00' parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' type='' class='IsqQVc NprOob wT3VGc' check:innerText='1,350.00' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <uix:NGetText DisplayName="Get Text '국동'" sap:VirtualizedContainerService.HintSize="530,166" sap2010:WorkflowViewState.IdRef="NGetText_13" ScopeIdentifier="7b21a6d9-70ca-4bc1-ab33-a2963d4886ce" TextString="[STR_stock_result2]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=005320&amp;sxsrf=ALiCzsZQ5d3YObQTIbIGOxDzBnKLesRwsg%3A1670393312746&amp;source=hp&amp;ei=4C2QY_amK_Dk2roPhp-zuAc&amp;iflsig=AJiK0e8AAAAAY5A78HMTLUg7Lz6_ulkkc5fRw522Wueg&amp;ved=0ahUKEwj2lqiA7Ob7AhVwslYBHYbPDHcQ4dUDCAo&amp;uact=5&amp;oq=005320&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECcyBwgjEOoCECdQXlhtYHFoAXAAeACAAQCIAQCSAQCYAQCgAQGwAQo&amp;sclient=gws-wiz" DesignTimeRectangle="330, 481, 71, 20" DesignTimeScaleFactor="1.100000023841858" ElementType="Text" FriendlyName="'(29.19%)'" FullSelectorArgument="&lt;webctrl aaname='(29.19%)' parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='knowledge-finance-wholepage__entity-summary' tag='SPAN' type='' class='' /&gt;" Guid="aadffc31-d27c-4c91-8e16-406e05bae258" InformativeScreenshot="3c2adec46ac263dfdd71cd4b7df47c12.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='005320 - Google 검색' /&gt;" SearchSteps="FuzzySelector" Version="V1" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target DesignTimeRectangle="343, 264, 122, 51" FriendlyName="'국동'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' idx='2' parentid='rcnt' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='PyJv1b gsmt PZPZlf' parentid='rcnt' tag='DIV' aaname='' check:innerText='국동' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH4AAAA3CAYAAADKdP4sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIiSURBVHhe7dq/SwJhAMbx/pSCwCFoaGtocxMcgpbAQXCqIWppkWiR+wsaigbDJRQaXNpyaxGdcggbwkVwCG4IGoIn7V6FNPDu3ru463k+8C4v9B7cV9/7YSsQSgpPSuFJKTwphSel8KQUnpTCk1J4UgpPSuFJKTwphSel8KQUnpTCk1J4Uj7Cd1FZW8eq9SjhdmiW9GtYR/HXtYIOBx2zpHgUntQfbPXTD45NeIWLmsKTUnhSCk8q/vCjpol3jocPM+eXwscm/vA28RQ+NikJbz8qbbOmfIs//EsNucnJ37nAk5nyTeFjsxB+1Cj9euLiGMXGyBw1pLZj1tKlICiFJ2W/1U9PfrEOy4zBKXxoiQrfcbyd4C8G+zVf4Umle6uX0BSeVKrCuy+PuL10cFTII7e9Mdu2vbGFbD6P/RMHN80eBkFfD5NZGj66x7vwd95ut4aj3HzoZWMLu+U6+u9mEfkh8eEH4+NnzBqZ7RIqjRaeXl2480E/P+C+jdBvN3FTLmBzetzs+LiKv8B+q1/G5l39aw2733+7gWK1B/fTzPsxbOEsaz4w5Ra08/+U6PD9at771h424Zq5QJ6vvd8J1o5xH2qB/yvR4WfP9U7XzARl8U8g/5y+8aR0jSeV7PBjg7uD2R2637v6q5M93dUvkfjwE26vjlM9x0cqFeGn9OYuOqkKL9GJP7wkksKTUnhSCk9K4UkpPCmFJ6XwpBSeEvAFzs3X1PFrJNgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                        <uix:Target DesignTimeRectangle="391, 552, 39, 24" ElementType="Text" FriendlyName="'1개월'" FullSelectorArgument="&lt;webctrl aaname='1개월' parentid='knowledge-finance-wholepage__entity-summary' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='1개월' parentid='knowledge-finance-wholepage__entity-summary' tag='DIV' type='' class='' check:innerText='1개월' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACsAAAAcCAYAAAD4IkbVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEdSURBVFhH7ZTRDYMgEIadw/ncwCl8dAUHcABn8K1LSNKYmMakT732UApF9LgWEk39EhIUOD5/xQQOxCkbi1M2Fv8r21YdlBfsjVAXqs9HNALSapivNGxZFErzz5Y143uMlp3G7Bpp0YOYZ7BlcWMlsYUW9JNdq2veZ8niQjOxdVBKQD1H4iMbMNkBSrlYQPYqSMqKHrL8Cu186SdL4yWrJ02bUbJ2UUpWvbGthmtYn4GfLL4F/QkgtgyVLM537RFcVopZBalkbUxZKWg8aDBZWdg4EAquLBe27JSAPlQmvrKLFF3t12TXElWESlbuE/aALdlVshQsWYcMxYrsdwRN1votIkFlY3PKxuKUjcVhZG/3ByTu38Y+24FkO3gCl456PoQcTwcAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <ui:GetEnvironmentFolder DisplayName="Get Environment Folder" FolderPath="[STR_document]" sap:VirtualizedContainerService.HintSize="530,71" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="MyDocuments" />
+                              <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="530,2136" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" UseTemplate="True" WorkbookPath="[STR_document+&quot;\DART전자공시\&quot;+DateTime.Parse(now.ToString).ToString(&quot;yyyyMMdd&quot;)+&quot;\DART_전자공시.xlsx&quot;]">
+                                <ueab:ExcelApplicationCard.Body>
+                                  <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="496,1835" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ueab:DuplicateSheetX DisplayName="Duplicate Sheet" sap:VirtualizedContainerService.HintSize="434,147" sap2010:WorkflowViewState.IdRef="DuplicateSheetX_1" NewSheetName="[STR_companyname]" SheetToDuplicate="[Excel.Sheet(&quot;회사명&quot;)]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(STR_companyname).Cell(&quot;B1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[STR_companyname]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(STR_companyname).Cell(&quot;B2&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[STR_reporter]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(STR_companyname).Cell(&quot;B3&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_3" Value="[STR_updatedate]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(STR_companyname).Cell(&quot;B4&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_4" Value="[STR_code]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(STR_companyname).Cell(&quot;B5&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_6" Value="[STR_stock_current]" />
+                                      <ueab:WriteCellX Cell="[Excel.Sheet(STR_companyname).Cell(&quot;B6&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteCellX_5" Value="[STR_stock_result1+STR_stock_result2+&quot;지난 1개월&quot;]" />
+                                      <ueab:WriteRangeX Destination="[Excel.Sheet(STR_companyname).Range(&quot;A10&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="434,168" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[DT_contract_details]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,70" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Int32">[INT_count]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Int32">[INT_count+1]</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ueab:ExcelApplicationCard.Body>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ueab:ExcelApplicationCard>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEachRow.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEachRow>
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelProcessScopeX.Body>
+              </ueab:ExcelProcessScopeX>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGpSURBVDhPfdJPKERRFMfxiffCiLKwYIWUkklqCCWU8m9hhYWU2NrYSJLQGJSJDUVskPzLCmGIYihko0RRNhYWrCz8K75nOvPnmTj1ad5793fue3Pvtf0us2+7AJk4RQcmcIdSODQWWQzGI1XDTdhCjd6PohPfWEGStoWKh3PYQAmaUQgnulEMaX7EPFoRmoSbOlShF/mG2xvrf96/E8d9IsbQgmrM4B3z/mbDc5hmDO294tIY3i8z3HvR/gEtJjEJZ8CDT8iXBJTb4ismU+x1M0577XSuvWYqK8ExEqO9wSKYDlmPRsjCymSrcq2R/4tgNhZxhhNc4AaHGvm7zIGdZIL1kMVdQvhfeNFYZJkub4bp2s0nJDshZ+Ea7WiDDzLBs8atxVsNLBAowxVyIOdBmu4xi234tMVarHweg7JVlXjCMRrwhsDnv8KlLdZioEdDXdjX62XImwMTiCJtCRXnIYqBcw2sI3zh1nCr11PaYi1z0Ctb9qGhB8jRDUwg5Dhvwq4t1mLx5LPDGw7Crr8gOxJx2ILF1mURGMQRZMXlVw7POJwa07LZfgCanDIYlY5xkQAAAABJRU5ErkJggg==" InformativeScreenshot="5b6ced82c19c856f0df8abf08ad0dbeb.jpg" Selector="&lt;html app='chrome.exe' title='전자공시시스템' /&gt;" Url="[config(&quot;DART page&quot;).ToString]" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
